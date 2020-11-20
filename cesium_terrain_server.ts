@@ -1,3 +1,4 @@
+#!/usr/bin/env -S deno run --allow-net --allow-read
 import { serve, Response, ServerRequest } from 'https://deno.land/std@0.78.0/http/server.ts';
 import { serveFile } from 'https://deno.land/std@0.78.0/http/file_server.ts';
 import { parse } from 'https://deno.land/std@0.78.0/flags/mod.ts';
@@ -70,7 +71,24 @@ function setTerrain (res: Response, filename: string): void {
 }
 
 async function main () {
+  if (serverArgs.h ?? serverArgs.help) {
+    console.log(`Cesium Terrain Server
+  Serves a local directory in HTTP and detect the .terrain file.
+
+  INSTALL:
+    deno install --allow-net --allow-read https://github.com/ZenDay/deno-gadgets/cesium_terrain_server.ts
+
+  USAGE:
+    cesium_terrain_server [path] [options]
+
+  OPTIONS:
+    -h, --help          Prints help information
+    -p, --port <PORT>   Set port`);
+    Deno.exit();
+  }
+
   const port = serverArgs.port ?? serverArgs.p ?? 8000;
+  console.log(`Listen to: port ${port}`)
 
   const server = serve({ port })
 
