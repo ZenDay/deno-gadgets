@@ -6,7 +6,7 @@ Some tiny gadgets written in Deno.
 
 ## Usages
 ```sh
-deno run https://github.com/ZenDay/deno-gadgets/any_gadgets.ts
+deno run https://github.com/ZenDay/deno-gadgets/any_gadgets.ts [options]
 # Or
 deno install https://https://github.com/ZenDay/deno-gadgets/any_gadgets.ts
 any_gadgets [options]
