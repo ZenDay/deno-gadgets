@@ -76,7 +76,7 @@ async function main () {
   Serves a local directory in HTTP and detect the .terrain file.
 
   INSTALL:
-    deno install --allow-net --allow-read https://github.com/ZenDay/deno-gadgets/cesium_terrain_server.ts
+    deno install --allow-net --allow-read https://raw.githubusercontent.com/ZenDay/deno-gadgets/master/cesium_terrain_server.ts
 
   USAGE:
     cesium_terrain_server [path] [options]
