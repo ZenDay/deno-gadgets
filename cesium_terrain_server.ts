@@ -102,7 +102,7 @@ async function main () {
         throw new Deno.errors.NotFound();
       } else {
         response = await serveFile(req, fsPath);
-        if (extname('.terrain')) {
+        if (extname(fsPath) === '.terrain') {
           setTerrain(response, basename(fsPath))
         }
       }
